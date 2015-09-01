@@ -26,6 +26,22 @@ For an overview of RTKLIB, visit http://www.rtklib.com or read the paper Takasu_
 For a brief background on differential GPS, as well as test results geared towards using RTKLIB with an MAV, please see the paper Grieneisen_SA_Final.pdf in the documentation folder.
 
 
+# Build / Install
+Assuming your computer already has ROS installed and a `catkin_ws` set up.
+```sh
+mkdir ~/rosbuild_ws
+cd ~/rosbuild_ws
+rosws init . ~/catkin_ws/devel # assuming catkin_ws already setup
+
+wstool set rtklibros --git https://github.com/ethz-asl/rtklibros
+wstool update rtklibros
+source setup.bash
+
+rosmake rtklibros
+source setup.bash
+```
+
+
 # GPS measurement node
 
 This node is used to stream GPS measurement data from a receiver to the RTKLIB server.
