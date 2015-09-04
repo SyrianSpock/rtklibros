@@ -33,11 +33,11 @@ mkdir ~/rosbuild_ws
 cd ~/rosbuild_ws
 rosws init . ~/catkin_ws/devel # assuming catkin_ws already setup
 
-wstool set rtklibros --git https://github.com/ethz-asl/rtklibros
-wstool update rtklibros
+wstool set rtklib --git https://github.com/syrianspock/rtklibros
+wstool update rtklib
 source setup.bash
 
-rosmake rtklibros
+rosmake rtklib
 source setup.bash
 ```
 
